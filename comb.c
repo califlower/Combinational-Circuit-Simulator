@@ -127,7 +127,7 @@ void print()
 }
 
 
-void onefuckingdeeper (char circuittext[],FILE *yargh)
+void readInputFile (char circuittext[],FILE *yargh)
 {
 	
 		/*************
@@ -403,7 +403,7 @@ void function(char circuittext[],char inputtext[])
 		int e;
 		for (e=0;e<lines;e++)
 		{
-			onefuckingdeeper(circuittext,in);
+			readInputFile(circuittext,in);
 		}
 	
 }
