@@ -411,5 +411,5 @@ void function(char circuittext[],char inputtext[])
 int main(int argc, char** argv)
 {	
 	function(argv[1],argv[2]);
-		
+	return 1;
 }
