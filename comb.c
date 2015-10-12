@@ -4,10 +4,10 @@
 
 struct node
 {
-    char varname;
+	char varname;
 	int val;
 	int isoutput;
-    struct node *next;
+    	struct node *next;
 }
 *head;
 
@@ -42,7 +42,7 @@ Has a output flag that determines if I should print it
 void set(char in,int val,int output)
 {
 	struct node *toInsert=(struct node *)malloc(sizeof(struct node));
-    struct node *iter;
+	struct node *iter;
 	
 	toInsert->varname=in;
 	toInsert->val=val;
@@ -63,14 +63,12 @@ void set(char in,int val,int output)
 			if (iter->varname==in)
 			{
 				iter->val=val;
-				
 				return;
 			}
 			if (iter->next==NULL)
 			{
 				toInsert->isoutput=output;
 				iter->next=toInsert;
-	
 				toInsert->next=NULL;
 				return;
 			}
@@ -84,7 +82,7 @@ void set(char in,int val,int output)
 
 
 /*****************
-Deletes the stupid linked list 
+Deletes the linked linked list 
 so that it doesn't cause an issue if someone decides to 
 run a zillion inputs or something weird
 ******************/
@@ -102,7 +100,6 @@ void deleteList()
        iter = next;
    }
    
-   
    head = NULL;
 }
 
@@ -110,7 +107,7 @@ void deleteList()
 /*******************************
 Prints the linked list. Will only print stuff with an output flag of 1
 The reason for the flag is because otherwise, it's impossible to know what I should print
-out dynamical
+out dynamicaly
 ******************************/
 
 void print()
@@ -293,20 +290,20 @@ void onefuckingdeeper (char circuittext[],FILE *yargh)
 			{
 				
 				
-				int loopvalue=0;			//Stores the value of how many inputs there are. Also determines how many times to loop to scan inputs
+				int loopvalue=0;		//Stores the value of how many inputs there are. Also determines how many times to loop to scan inputs
 				char loopypoopy[10];		//The character representation of above
-				int amtoutputs=0;			//The outputs/selectors. Determined by taking the log-base2 of the amount of inputs to get 2^x=outputs
+				int amtoutputs=0;		//The outputs/selectors. Determined by taking the log-base2 of the amount of inputs to get 2^x=outputs
 				int inputarray[100];		//An array that stores the input values as integers 1 or 0
-				int biSelect[10];			//Used to store the selector value as a binary array
+				int biSelect[10];		//Used to store the selector value as a binary array
 				int decimalSelect=0;		//Stores the converted binary array as a decimal number
 
 				
 				fscanf(circuit, "%s", loopypoopy);	//Scans the input number and stores it
-				loopvalue=atoi(loopypoopy);			//Converts the loop char to int
+				loopvalue=atoi(loopypoopy);		//Converts the loop char to int
 				
 				double temp1=log(loopvalue);		//Takes log of loopvalue
-				double temp2=log(2);				//Takes log of base 2
-				amtoutputs=temp1/temp2;				//Math trick to do log base 2
+				double temp2=log(2);			//Takes log of base 2
+				amtoutputs=temp1/temp2;			//Math trick to do log base 2
 				
 				
 				/*
@@ -361,7 +358,7 @@ void onefuckingdeeper (char circuittext[],FILE *yargh)
 					}
 				
 				}
-				//Converts the stupid decimal number to a gray code by bit shifting and xoring
+				//Converts the  decimal number to a gray code by bit shifting and xoring
 				decimalSelect=(decimalSelect>>1)^decimalSelect;
 				
 				//Jumps to the output variable
